@@ -9,22 +9,22 @@ class Sql extends PDO{
         $this->conn = new PDO("mysql:host=localhost;dbname=dbphp7","root","");
     }
 //recebe os parametros para serem "bindados"
-    private function setParams($statment, $parameters = array()){
+    private function setParams($statement, $parameters = array()){
 
         foreach ($parameters as $key => $value){
 
-            $this->setParam($key,$value);
+            $this->setParam($statement,$key,$value);
 
         }
 
     }
 
-    private function setParam($statment, $key, $value){
+    private function setParam($statement, $key, $value){
 
-        $statment->bindParam($key,$value);
+        $statement->bindParam($key,$value);
     }
 //recebe e prepara a query para ser executada no banco de dados
-    public function query($rawQuery, $params = array()){
+    public function rquery($rawQuery, $params = array()){
         
         $stmt = $this->conn->prepare($rawQuery);
         //envia os parametros para serem "bindados"
@@ -38,7 +38,7 @@ class Sql extends PDO{
 
     public function select($rawQuery, $params = array()):array{
 
-        $stmt = $this->query($rawQuery, $params);
+        $stmt = $this->rquery($rawQuery, $params);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
