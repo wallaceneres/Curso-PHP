@@ -29,10 +29,26 @@ echo json_encode($busca);*/
 
 //carrega os dados do usuario usando login e senha
 
-$entrar = new Usuario();
+/*$entrar = new Usuario();
 
 $entrar->login("user", "123456");
 
-echo $entrar;
+echo $entrar;*/
+
+//insere um novo cadastro apartir de uma procedure no banco de dados
+
+/*$aluno = new Usuario("aluno", "teste");
+
+$aluno->insert();
+
+echo $aluno;*/
+
+$usuario = new Usuario();
+
+$usuario->loadById(8);
+
+$usuario->update("professor","linguica");
+
+echo $usuario;
 
 ?>
