@@ -43,11 +43,21 @@ $aluno->insert();
 
 echo $aluno;*/
 
-$usuario = new Usuario();
+//altera um usuario no banco de dados
+
+/*$usuario = new Usuario();
 
 $usuario->loadById(8);
 
 $usuario->update("professor","linguica");
+
+echo $usuario;*/
+
+$usuario = new Usuario();
+
+$usuario->loadById(7);
+
+$usuario->delete();
 
 echo $usuario;
 
