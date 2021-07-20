@@ -1,0 +1,16 @@
+{
+    "name": "hcodebr/composer",
+    "description": "aula de PHP 7",
+    "type": "project",
+    "authors": [
+        {
+            "name": "wallaceneres",
+            "email": "wallace.souzza@live.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "monolog/monolog": "1.0.*"
+
+    }
+}
